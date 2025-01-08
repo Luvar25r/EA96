@@ -5,4 +5,6 @@ Comentarios sobre la clase:
 Muy interesante aprender el uso de Git
 para el control de versiones.
 
+Segundo commit.
+
 
