@@ -43,6 +43,7 @@ int main(){
 
   getInput(phrase);
 
+
   printf ("El numero de vocales es %d y el numero de consonantes es %d",vocales,consonantes);
 
   return 0;
