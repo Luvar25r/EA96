@@ -9,7 +9,7 @@ char vocales[5]={'a','e','i','o','u'};
 int countVowels(char *phrase) {
     int numvocales = 0;
 
-
+//Este es el archivo correcto
     for (int j=0;j<=5;j++) {
         for (int i = 0;i<strlen(phrase); i++) {
             if (phrase[i] == vocales[j]) {
@@ -17,7 +17,6 @@ int countVowels(char *phrase) {
             }
         }
     }
-
     /*
      *1.-Leer letra de la cadena
      *2.- Comprobar si es a,e, i, u
