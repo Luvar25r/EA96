@@ -30,13 +30,14 @@ int countVowels(char *phrase) {
 int countConsonants(char *phrase) {
     int numconsonantes = 0;
 
-    //Primero contar letra por letra y despues comprobar si es vocal
 
+    //Primero contar letra por letra y despues comprobar si es vocal
+    int esconsonante=1;
     for (int i = 0;i<strlen(phrase); i++) { //Cuenta letra por letra
-        for (int j=0;j<=5;j++) { //Cuenta vocales
-            if (phrase[i]!=vocales[j]) {
-                numconsonantes++;
-            }
+        for (int j=0;j<=5 && numconsonantes==i;j++) { //Cuenta vocaleS
+                if (phrase[i]!=vocales[j]) {
+                    numconsonantes++;
+                }
         }
     }
     return numconsonantes;
