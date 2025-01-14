@@ -1,0 +1,68 @@
+ /*Practica 1 HackerRank "Simple Array Sum"
+
+        public static int simpleArraySum(List<Integer> ar) {
+        // Write your code here
+        int suma = 0;
+        for (int elemento : ar){
+            suma += elemento;
+        }
+        return suma;
+        }
+
+
+        -----------------------------------------------------------------
+        //Practica 2 HackerRank "Compare the Triplets"
+
+        public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b)  {  //Clase compareTriplets
+        int resultadoAlice=0, resultadoBob=0;
+
+
+        List<Integer> result = new ArrayList();
+
+        for (int i=0;i<=2;i++){
+            if (a.get(i)> b.get(i)){
+                resultadoAlice+=1;
+
+            }
+            if (b.get(i)> a.get(i)){
+                resultadoBob+=1;
+
+            }
+        }
+        result.add(resultadoAlice);
+        result.add(resultadoBob);
+        return result;
+
+
+    }
+
+-------------------------------------------------------------------------------------
+        Practica 3 HackerRank "Birthday Cake Candles"
+        public static int birthdayCakeCandles(List<Integer> candles) {
+    // Write your code here
+    int tallest=0,numtallest=0;
+
+
+    for (int i=0; i<candles.size(); i++ ){
+        if (candles.get(i)>tallest){
+            tallest=candles.get(i);
+        }
+        if (candles.get(i)==tallest){
+            numtallest+=1;
+        }
+    }
+
+
+
+
+    return numtallest;
+
+
+
+    }
+
+
+         */
+
+    }
+}
