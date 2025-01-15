@@ -1,0 +1,76 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+import java.util.Scanner;
+
+/*Primero recibir la lista de caramelos
+    asignar el valor del mayor de esa lista a "greatest"
+
+    a cada elemento se le suma "extraCandies"
+    y se deposita en una lista distinta "candiesMasExtra"
+//Después comparar, si candies[i]+ extraCandies
+    es >= (mayor o igual a) the "greatest"
+    asignar true al indice actual de kidsWithCandies[i]
+
+    pasar al siguiente, hacer esto con un for
+*/
+
+class Result {
+    public static List<Boolean> kidsWithCandies(List<Integer> candies, int extraCandies) {
+        int greatest = 0;
+        for (int i = 0; i < candies.size(); i++) {
+            if (candies.get(i) > greatest) {        //Asigna el valor a greatest
+                greatest = candies.get(i);
+            }
+        }
+
+        ArrayList<Integer> candiesMasExtra = new ArrayList<Integer>();
+
+        for (int i = 0; i < candies.size(); i++) {
+            candiesMasExtra.add(candies.get(i) + extraCandies);     //Lista que guarda la lista con extracandies
+        }
+
+        ArrayList<Boolean> candiesBooleana = new ArrayList<Boolean>();
+
+        for (int i = 0; i < candies.size(); i++) {
+            if (candiesMasExtra.get(i) >= greatest) {
+                candiesBooleana.add(true);          //Compara si candies con extra
+            } else {                                // es mayor que greatest
+                candiesBooleana.add(false);
+            }
+        }
+        return candiesBooleana;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        List<Integer> candies = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());     // Recibe los valores de la entrada y los asigna a candies
+                                        //separado con espacios
+
+        Scanner enterExtraCandies = new Scanner(System.in);
+        int extraCandies = enterExtraCandies.nextInt();  //recibe extracandies
+
+        List<Boolean> result = Result.kidsWithCandies(candies, extraCandies);
+
+
+        System.out.println(result.stream()
+            .map(Object::toString)
+            .collect(joining(" ")));        //Imprime el resultado
+
+        bufferedReader.close();
+        enterExtraCandies.close();
+    }
+}
